@@ -37,7 +37,7 @@ def get_user_config(config_expander):
         "verbose": True,
         "task_timeout": 1800,  # 30 minutes
         "action_timeout": 300,
-        "environment_timeout": 30,
+        "environment_timeout": 180,
     }
 
     with config_expander:
@@ -96,7 +96,7 @@ def get_user_config(config_expander):
         config["environment_timeout"] = st.number_input(
             "Environment Timeout (seconds)",
             min_value=10,
-            max_value=300,
+            max_value=1800,
             step=10,
             value=config["environment_timeout"],
             help="Maximum time allowed for environment to respond",
